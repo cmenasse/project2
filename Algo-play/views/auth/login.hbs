@@ -1,0 +1,17 @@
+
+<div class="box">
+   <h1>Login</h1>
+<form class="input-box" action="/auth/login" method="POST">
+   <label> 👤 User
+      <input type="text" name="username">
+   </label>
+   <label> 🔑 Password 
+      <input type="password" name="password">
+   </label>
+   <br>
+   <button type="submit">Submit</button>
+</form>
+</div>
+{{#if errorMessage}}
+   {{errorMessage}}
+{{/if}}

@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: #ffffff;
+  /* border: 1px solid green; */
+}
+body {
+  font-family: 'Archivo', sans-serif;
+  background-color: #121124;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  height: 100vh;
+}
+
+/* Main page*/
+
+.btn-play {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.btn-play img{
+  max-width: 13vw;
+  margin: 25px;
+}
+.main-btn{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  min-width: 25vw;
+
+}
+
+.main-btn a {
+  color: #e91e63;
+  position: relative;
+  padding: 10px 30px;
+  margin: 0px 15px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  overflow: hidden;
+}
+.main-btn a:hover{
+  background-color: #e91e63;
+  color: whitesmoke;
+  box-shadow: 0 0 60px #e91e63;
+  transition-delay: 0.5s;
+}
+.main-btn a:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #e91e63;
+  border-left: 2px solid #e91e63;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.main-btn a:hover:before{
+  width: 100%;
+  height: 100%;
+  transition-delay: 0s;
+}
+.main-btn a:hover:after{
+  width: 100%;
+  height: 100%;
+  transition-delay: 0s;
+}
+.main-btn a:after{
+  content: "";
+  position: absolute;
+  bottom:  0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #e91e63;
+  border-right: 2px solid #e91e63;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.main-btn a:nth-child(1){
+ filter: hue-rotate(285deg);
+}
+.main-btn a:nth-child(3){
+  filter: hue-rotate(285deg);
+ }
+
+/* the special title game */
+
+.btn-play .special {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  position: relative;
+  color:  #121124;
+  -webkit-text-stroke: 0.2vw #121124;
+  height: 50px;
+}
+.btn-play .special::before{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color:  #e91e63;
+  -webkit-text-stroke: 0vw #121124;
+  overflow: hidden;
+  border-right: 2px solid #ffffff;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+  0%, 20%,100% {
+    width: 0;
+  }
+  40%,50%,95%{
+    width: 100%;
+  }
+}
+
+/*nav bar*/
+
+
+.menu img{
+  width: 50px;
+}
+header {
+  position: fixed;
+  right: 30;
+  top: 30;
+  display: flex;
+}
+.action{
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ cursor: pointer; 
+}
+.action .profile img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+ }
+ .action .menu{
+   position: absolute;
+   right: -10px;
+   top: 130px;
+   padding: 10px 20px;
+   background: #7e7e7e6e ;
+   width: 200px;
+   box-sizing: 0 5px 25px black;
+   border-radius: 20px;
+   transition: 0,5s;
+   visibility: hidden;
+   opacity: 0;
+ }
+ .action .menu.active{
+   top: 70px;
+   visibility: visible;
+   opacity: 1;
+ }
+ .action .menu h3{
+  line-height: 1.2rem;
+  font-size: 1.6rem;
+  padding: 20px 0px;
+  text-align: center;
+  width: 100%;
+  color: #c21858;
+  transition: 1s;
+}
+.action .menu ul li{
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  padding: 10px 0;
+  border-top: 1px solid #363636;
+  font-size: 1.2rem;
+}
+.action .menu ul li img{
+  max-width: 40px;
+  margin-right: 10px;
+  transition: 0,5s;
+}
+.action .menu ul li a{
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  transition: 0,5s;
+}
+.action .menu ul li:hover a{
+  color: #c21858;
+}
+
+/* login and signUp */
+
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #7e7e7e6e;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px #000000;
+  border-radius: 15px;
+}
+.box h1{
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 9vmin;
+}
+.box .input-box{
+  position: relative;
+}
+.box .input-box input{
+width: 100%;
+padding: 10px 0;
+color: #ffffff;
+font-size: 15px;
+margin-bottom: 30px;
+margin-top: 10px;
+outline: none;
+border: none;
+border-bottom: 3px solid #e91e63;
+background: #363636;
+border-radius: 5px;
+
+}
+.box .input-box label{
+top: 0;  
+padding: 10px 0;
+font-size: 20px;
+color: #121124;
+transition: 0.5s;
+}
+.box .input-box button{
+  position: absolute;
+  right: 37%;
+  color: #e91e63;
+  padding: 10px 30px;
+  margin: -8px 15px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+}
+.box .input-box button:hover{
+  background-color: #e91e63;
+  color: whitesmoke;
+  box-shadow: 0 0 60px #e91e63;
+  transition-delay: 0.2s;
+}
+
+/* Puzzle template */
+
+.container{
+  display: flex;
+  justify-content: center;
+  max-width: 75vw;
+  background: #363636;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 1px;
+  border-radius: 15px ;
+  box-shadow: 0 15px 25px #000000;
+}
+.container:nth-child(1) {
+  margin-top: 15vh;
+}
+.container:hover{
+  box-shadow: 0 0 30px #e91e63;
+  transition: 1s;
+}
+.container .template{
+  position: relative;
+  width: 75vw;
+  height: 250px;
+  background: #121124;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 15px ;
+}
+.content{
+  position: relative;
+  padding: 20px;
+}
+.container .template h1{
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 10em;
+  transition: 0.5s;
+  visibility: hidden;
+}
+.container .template:hover h1{
+  top: -110px;
+  visibility: visible;
+}
+.content h3{
+margin: 0 0 20px;
+padding: 0;
+font-size: 23px;
+font-weight: 300;
+}
+.content h3::first-letter{
+  color: #c21858;
+  }
+.puzzle-picture{
+  max-height: 200px;
+}
+.puzzle-picture img{
+  max-height: 200px;
+}
+.container a{
+  position:absolute;
+  bottom: 30px;
+  left: 50%;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+}
+.container a:hover{
+  background-color: #e91e63;
+  color: whitesmoke;
+  transition-delay: 0.2s;
+
+}
+.main-table{
+  min-height: 100vh;
+}
+.main-table title{
+  display: flex;
+  font-weight: 700;
+  width: 106%;
+  font-size: 4rem;
+  justify-content: center;
+  padding: 35px;
+}
