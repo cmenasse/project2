@@ -368,3 +368,82 @@ font-weight: 300;
   justify-content: center;
   padding: 35px;
 }
+
+/* clement */
+
+#container {
+  border: 1px solid red;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  height: 60vh;
+  width: 60vw;
+}
+
+.tile {
+  display: flex;
+  color: rgb(49, 190, 131);
+  background-color: rgb(93, 110, 185);
+  border: 1px solid black;
+}
+
+#palette {
+  border: 1px solid yellow;
+  height: 40vh;
+  width: 60vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.properties {
+  height: 20vh;
+  width: 20vw;
+
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 20vh;
+  width: 20vw;
+}
+
+.color1 {
+  background-color: coral;
+}
+
+.color2 {
+  background-color: cornflowerblue;
+}
+
+.color3 {
+  background-color: lightpink;
+}
+
+.star {
+  border: 1px solid rgb(111, 0, 255);
+  background-image: url(../images/star.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cursor {
+  background-image: url(../images/arrow.png);
+  background-size: contain;  
+  background-repeat: no-repeat;
+}
+
+
+.rotate {
+  background-image: url(../images/refresh.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}

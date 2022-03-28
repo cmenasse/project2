@@ -19,7 +19,7 @@ const app = express();
 require("./config")(app);
 
 const capitalized = require("./utils/capitalized");
-const projectName = "Algo-play";
+const projectName = "algoplay";
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
@@ -30,11 +30,11 @@ app.use("/", index);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
-const userRoutes = require("./routes/profile.routes");
-app.use("/user", userRoutes);
+const usersRoutes = require("./routes/profile.routes");
+app.use("/users", usersRoutes);
 
-const puzzleRoutes = require("./routes/puzzle.routes");
-app.use("/puzzle", puzzleRoutes);
+const puzzlesRoutes = require("./routes/puzzles.routes");
+app.use("/puzzles", puzzlesRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
