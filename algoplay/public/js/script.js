@@ -1,7 +1,7 @@
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    console.log("Algo-play JS imported successfully!");
+    console.log("algoplay JS imported successfully!");
   },
   false
 );
@@ -11,19 +11,27 @@ function menuToggle(){
   toggleMenu.classList.toggle('active')  
 }
 
-function displayTiles() {
+function createTiles() {
   let html = '';
-  for (let i = 0; i < 14; i++) {
-    for (let j = 0 ; j < 12 ; j++) {
-      html += `<div class="tile"></div>`;
+  for (let i = 0; i < 12; i++) {
+    for (let j = 0; j < 14; j++) {
+      html += `<div class="tile" data-row="${i}" data-col="${j}"></div>`;
     }
   }
   document.querySelector('#grid').innerHTML = html;
 }
 
+function displayTiles() {
+  document.querySelector('[data-row="5"][data-col="6"]').className = "color1 cursor";
+  document.querySelector('[data-row="5"][data-col="7"]').className = "color1 star";
+
+  document.querySelector('[data-row="7"][data-col="9"]').className = "color2";
+
+}
+
 function displayProperties() {
   let html = '';
-  html += `<div class="properties">`;
+  html+= `<div class="properties">`;
   html+= 
   `<form action="/puzzles/" method="POST">
   <input type="text" placeholder="Title" name="name" required>
@@ -38,7 +46,7 @@ function displayProperties() {
   <br>
   <button type="submit">Submit</button>
   </form>`
-  html+=`</div>`
+  html+= `</div>`
   document.querySelector('#palette').innerHTML += html;
 }
 
@@ -55,6 +63,32 @@ function displayTools() {
   document.querySelector('#palette').innerHTML += html;
 }
 
+state = "tile"
+
+function clickGrid(event) {
+  console.log(event.target.className);
+  if (state == "tile")
+  {
+    event.target.className = "tile";
+  }
+  console.log(event.target.getAttribute("data-row"))
+  console.log(event.target.className);
+}
+
+
+
+function clickTools(event) {
+  console.log("yay");
+  console.log(event.target.getAttribute("data-row"));
+}
+
+
+
+createTiles();
 displayTiles();
 displayProperties();
 displayTools();
+
+document.querySelector("#grid").addEventListener('click', clickGrid)
+document.querySelector(".tools").addEventListener('click', clickTools)
+

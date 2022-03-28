@@ -386,13 +386,6 @@ font-weight: 300;
   width: 60vw;
 }
 
-.tile {
-  display: flex;
-  color: rgb(49, 190, 131);
-  background-color: rgb(93, 110, 185);
-  border: 1px solid black;
-}
-
 #palette {
   border: 1px solid yellow;
   height: 40vh;
@@ -401,6 +394,10 @@ font-weight: 300;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.tile {
+  background-color: black;
 }
 
 .properties {
@@ -417,11 +414,11 @@ font-weight: 300;
 }
 
 .color1 {
-  background-color: coral;
+  background-color:rgb(93, 110, 185);
 }
 
 .color2 {
-  background-color: cornflowerblue;
+  background-color: rgb(49, 190, 131);
 }
 
 .color3 {
