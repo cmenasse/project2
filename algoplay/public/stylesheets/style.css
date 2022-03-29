@@ -2,14 +2,14 @@
 
 *{
   padding: 0px;
-  margin: 0px;
+  margin: 1px;
   box-sizing: border-box;
   color: #ffffff;
   /* border: 1px solid green; */
 }
 body {
   font-family: 'Archivo', sans-serif;
-  background-color: #121124;
+  background-color: #363636;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +32,6 @@ body {
 }
 .main-btn{
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   min-width: 25vw;
@@ -372,7 +371,6 @@ font-weight: 300;
 /* clement */
 
 #container {
-  border: 1px solid red;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -380,53 +378,67 @@ font-weight: 300;
 }
 
 #grid {
+  background-color: #000000;
   display: grid;
   grid-template-columns: repeat(14, 1fr);
-  height: 60vh;
-  width: 60vw;
+  height: 607px;
+  width: 750px;
+  border: 1px solid rgb(37, 37, 37);
+
 }
 
 #palette {
-  border: 1px solid yellow;
-  height: 40vh;
-  width: 60vw;
+  /* height: 40vh;
+  width: 60vw; */
   display:flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+
 }
 
 .tile {
+  border: 1px solid rgb(37, 37, 37);
   background-color: black;
+  border-radius: 1px;
 }
 
 .properties {
-  height: 20vh;
-  width: 20vw;
-
+  width: 32vw;
+  
 }
 
 .tools {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 20vh;
-  width: 20vw;
+  height: 100px; 
+  width: 155px;
+}
+.properties input{
+  color: #000000;
 }
 
 .color1 {
   background-color:rgb(93, 110, 185);
+  border: 1px solid rgb(93, 110, 185);
+  border-radius: 2px;
+
 }
 
 .color2 {
   background-color: rgb(49, 190, 131);
+  border: 1px solid rgb(49, 190, 131);
+  border-radius: 2px ;
+
 }
 
 .color3 {
   background-color: lightpink;
+  border: 1px solid lightpink;
+  border-radius: 2px ;
+
 }
 
 .star {
-  border: 1px solid rgb(111, 0, 255);
   background-image: url(../images/star.png);
   background-size: contain;
   background-repeat: no-repeat;
