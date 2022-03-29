@@ -5,11 +5,11 @@
   margin: 0px;
   box-sizing: border-box;
   color: #ffffff;
-  /* border: 1px solid green; */
+  border: 1px solid green;
 }
 body {
   font-family: 'Archivo', sans-serif;
-  background-color: #121124;
+  background-color: #7c8486;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -382,18 +382,17 @@ font-weight: 300;
 #grid {
   display: grid;
   grid-template-columns: repeat(14, 1fr);
-  height: 60vh;
-  width: 60vw;
+  height: 607px;
+  width: 750px;
 }
 
 #palette {
   border: 1px solid yellow;
-  height: 40vh;
-  width: 60vw;
+  /* height: 40vh;
+  width: 60vw; */
   display:flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
 .tile {
@@ -401,16 +400,19 @@ font-weight: 300;
 }
 
 .properties {
-  height: 20vh;
-  width: 20vw;
+  height: 25vh;
+  width: 25vw;
 
 }
 
 .tools {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 20vh;
-  width: 20vw;
+  height: 100px; 
+  width: 155px;
+}
+.properties input{
+  color: #000000;
 }
 
 .color1 {
