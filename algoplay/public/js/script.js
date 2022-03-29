@@ -27,80 +27,69 @@ function displayTiles() {
   document.querySelector('[data-row="7"][data-col="9"]').className = "color2";
 }
 
-function displayProperties() {
-  let html = '';
-  html+= `<div class="properties">`;
-  html+= 
-  `<form action="/puzzles/" method="POST">
-  <input type="text" placeholder="Title" name="name" required>
-  <br>
-  <input type="text" placeholder="Comment" name="comment">
-  <br>
-  <input type="number" placeholder="F1 commands"  name="cmd1" min="1" max="10">
-  <br>
-  <input type="number" placeholder="F2 commands"  name="cmd1" min="0" max="10">
-  <br>
-  <input type="number" placeholder="F3 commands"  name="cmd1" min="0" max="10">
-  <br>
-  <button type="submit">Submit</button>
-  </form>`
-  html+= `</div>`
-  document.querySelector('#palette').innerHTML += html;
-}
-
-function displayTools() {
-  let html = '';
-  html+= `<div class="tools">`;
-  html+= `<div class="color1"></div>`;
-  html+= `<div class="color2"></div>`;
-  html+= `<div class="color3"></div>`;
-  html+= `<div class="star"></div>`;
-  html+= `<div class="cursor"></div>`;
-  html+= `<div class="rotate"></div>`;
-  html+= `</div>`;
-  document.querySelector('#palette').innerHTML += html;
-}
-
 
 function clickGrid(event) {
-  console.log(event.target.className);
   switch (state) {
     case "tile":
-      event.target.className = "tile";
+      if (!event.target.classList.contains("cursor"))
+      { 
+        if (event.target.classList.contains("star"))
+        {
+          if (nbStars == 1)
+            break;
+          nbStars--;
+        }
+        event.target.className = "tile";
+      }
       break;
-
-    
+    case "star":
+      if (!event.target.classList.contains('cursor') && !event.target.classList.contains('tile'))
+      {
+        event.target.classList.add(state);
+        nbStars++;
+      }
+      break;
+    case "cursor":
+      if (!event.target.classList.contains('tile'))
+      {
+        if (event.target.classList.contains("star"))
+        {
+          if (nbStars == 1)
+            break;
+          nbStars--;
+          event.target.classList.remove("star");
+        }
+        document.querySelector('.cursor').classList.remove('cursor');
+        event.target.classList.add("cursor");
+      }
+      break;
     case "color1": case "color2": case "color3":
-      if (event.target.classList.contains("star"))
-       event.target.className = `${state} star`;
-      else if (event.target.classList.contains("cursor"))
-        event.target.className = `${state} cursor`;
-      else 
-        event.target.className = `${state}`;
-
-
-
-
-
+      if (event.target.classList.contains(state))
+      {
+        if (!event.target.classList.contains("cursor"))
+          event.target.className = "tile";
+      }
+      else
+      {
+        if (event.target.classList.contains("star"))
+        event.target.className = `${state} star`;
+        else if (event.target.classList.contains("cursor"))
+          event.target.className = `${state} cursor`;
+        else 
+          event.target.className = `${state}`;
+      }
+      break;
   }
-
-
-  console.log(event.target.getAttribute("data-row"))
-  console.log(event.target.className);
 }
 
 function clickTools(event) {
-  console.log("yay");
-  console.log(event.target.getAttribute("data-row"));
+  state = event.target.className;
 }
 
-
 state = "tile";
-
+nbStars = 1;
 createTiles();
 displayTiles();
-displayProperties();
-displayTools();
 
 document.querySelector("#grid").addEventListener('click', clickGrid)
 document.querySelector(".tools").addEventListener('click', clickTools)
