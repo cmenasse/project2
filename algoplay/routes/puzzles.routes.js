@@ -14,12 +14,24 @@ router.get('/create', (req, res, next) => {
   res.render('puzzles/create');
 })
 
+
+function convertFormToModel(formData) {
+  const colors = formData.colors.split(",");
+  const items = formData.items.split(",");
+  const functions = [formData.cmd1, formData.cmd2, formData.cmd3];
+  return {...formData, colors, items, functions};
+}
+
 router.post('/create', async (req, res, next) => {
   try {
-    await Puzzle.create(req.body);
+    const  converted = convertFormToModel(req.body);
+    console.log(converted);
+    await Puzzle.create(converted);
     res.redirect('/puzzles');
-  } catch {
-    res.redirect('/puzzles/create');
+  } catch(error) {
+    console.error(error);
+    next(error);
+    // res.redirect('/puzzles/create');
   }
 })
 
