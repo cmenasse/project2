@@ -1,23 +1,40 @@
-function menuToggle(){
-  const toggleMenu = document.querySelector('.menu')
-  toggleMenu.classList.toggle('active')  
-}
+let maxHeight = 12;
+let maxWidth = 16;
 
 function createTiles() {
   let html = '';
-  for (let i = 0; i < 12; i++) {
-    for (let j = 0; j < 14; j++) {
-      html += `<div class="tile inactive" data-row="${i}" data-col="${j}"></div>`;
-    }}
+  for (let i = 0; i <  maxHeight * maxWidth; i++) {
+    html += `<div class="tile inactive"></div>`;
   document.querySelector('#grid').innerHTML = html;
+}
 }
 
 function displayTiles() {
-  document.querySelector('[data-row="5"][data-col="6"]').classList.remove("inactive");
-  document.querySelector('[data-row="5"][data-col="6"]').classList.add("color1", "cursor");
-  document.querySelector('[data-row="5"][data-col="7"]').classList.remove("inactive");
-  document.querySelector('[data-row="5"][data-col="7"]').classList.add("color1", "star");
+  let tiles = document.getElementById('grid').children;
+  let idx = ((maxHeight / 2) - 1) * maxWidth + (maxWidth / 2 - 1);
+  cursor = tiles[idx];
+  star = tiles[idx + 1];
+  cursor.classList.remove("inactive");
+  cursor.classList.add("color1", "cursor");
+  star.classList.remove("inactive");
+  star.classList.add("color1", "star");
 }
+
+// function createTiles() {
+//   let html = '';
+//   for (let i = 0; i < 12; i++) {
+//     for (let j = 0; j < 16; j++) {
+//       html += `<div class="tile inactive" data-row="${i}" data-col="${j}"></div>`;
+//     }}
+//   document.querySelector('#grid').innerHTML = html;
+// }
+
+// function displayTiles() {
+//   document.querySelector('[data-row="5"][data-col="7"]').classList.remove("inactive");
+//   document.querySelector('[data-row="5"][data-col="7"]').classList.add("color1", "cursor");
+//   document.querySelector('[data-row="5"][data-col="8"]').classList.remove("inactive");
+//   document.querySelector('[data-row="5"][data-col="8"]').classList.add("color1", "star");
+// }
 
 function dropStar(tile) {
   if (tile.classList.contains("star") && nbStars > 1) {

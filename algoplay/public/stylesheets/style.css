@@ -388,7 +388,7 @@ font-weight: 300;
 #grid {
   background-color: #000000;
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: repeat(16, 1fr);
   height: 607px;
   width: 750px;
   border: 1px solid rgb(37, 37, 37);
