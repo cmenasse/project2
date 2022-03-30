@@ -10,7 +10,7 @@ const puzzleSchema = new Schema(
     items: {type: [String]},
     startRow: {type: Number},
     startCol: {type: Number},
-    startDir: {type: String, enum: ["up", "right", "down", "left"], default: "right"},
+    startDir: {type: Number, enum: [0 , 1, 2, 3], default: 0},
     controls: {type: [String]},
     functions: {type: [Number]}
   },

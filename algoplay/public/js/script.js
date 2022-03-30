@@ -1,12 +1,15 @@
 let maxHeight = 12;
 let maxWidth = 16;
 
+
+// Functions 
+
 function createTiles() {
   let html = '';
   for (let i = 0; i <  maxHeight * maxWidth; i++) {
     html += `<div class="tile inactive"></div>`;
   document.querySelector('#grid').innerHTML = html;
-}
+  }
 }
 
 function displayTiles() {
@@ -112,7 +115,20 @@ function clickTools(event) {
   else {
     state = event.target.className;
   }
+  encode();
 }
+
+// Init 
+
+let angle = 0;
+let nbStars = 1;
+let isMouseDown;
+let state = "color1";
+createTiles();
+displayTiles();
+
+
+// EventListeners
 
 document.addEventListener('mousedown', function (event) {
   isMouseDown = true;
@@ -128,13 +144,49 @@ document.addEventListener('mouseover', function (event) {
   }
 })
 
-let angle = 0;
-let nbStars = 1;
-let isMouseDown;
-let state = "color1";
-createTiles();
-displayTiles();
+document.querySelector("#grid").addEventListener('click', clickGrid);
+document.querySelector(".tools").addEventListener('click', clickTools);
+document.querySelector("form").addEventListener('submit', handleSubmit);
 
-document.querySelector("#grid").addEventListener('click', clickGrid)
-document.querySelector(".tools").addEventListener('click', clickTools)
 
+// MongoDB
+
+function encode() {
+  let startRow = 0;
+  let startCol = 0;
+  let itemsMap = [];
+  let colorsMap = [];
+  let tiles = document.getElementById('grid').children;
+  for (let i = 0; i <  maxHeight; i++) {
+    let colorsRow = "";
+    let itemsRow =  "";
+    for (let j = 0; j <  maxWidth; j++) {
+      let tile = tiles[i * maxWidth + j];
+      colorsRow += tile.classList.contains("color2")?"G":(tile.classList.contains("color3")?"B":"R");
+      itemsRow += tile.classList.contains("inactive")?"#":(tile.classList.contains("star")?"*":".");
+      if (tile.classList.contains("cursor")) {
+        startRow = i;
+        startCol = j;
+      }
+    }
+    itemsMap.push(itemsRow);
+    colorsMap.push(colorsRow);
+  }
+
+  console.log(startRow,startCol,  angle / 90);
+  console.log(colorsMap,itemsMap);
+
+
+  return ([colorsMap, itemsMap, startRow, startCol, angle / 90]);
+} 
+
+
+function handleSubmit () {
+  const [colorsMap, itemsMap, startRow, startCol, startDir] = encode();
+  document.getElementById('colors').value = colorsMap;
+
+  document.getElementById('items').value = itemsMap;
+  document.getElementById('startRow').value = startRow;
+  document.getElementById('startCol').value = startCol;
+  document.getElementById('startDir').value = startDir;
+}
