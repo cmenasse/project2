@@ -2,7 +2,7 @@
 
 *{
   padding: 0px;
-  margin: 1px;
+  margin: 0px;
   box-sizing: border-box;
   color: #ffffff;
   /* border: 1px solid green; */
@@ -377,6 +377,7 @@ font-weight: 300;
 
 /* clement */
 
+
 #container {
   display:flex;
   flex-direction: column;
@@ -402,11 +403,17 @@ font-weight: 300;
   justify-content: center;
 }
 
+input {
+  display: block;
+}
+
 .tile {
   border: 1px solid rgb(37, 37, 37);
   background-color: black;
   border-radius: 1px;
 }
+
+
 
 .properties {
   width: 32vw;
@@ -423,6 +430,9 @@ font-weight: 300;
   color: #000000;
 }
 
+.inactive {
+  background-color: black;
+}
 .color1 {
   background-color:rgb(93, 110, 185);
   border: 1px solid rgb(93, 110, 185);

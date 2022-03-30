@@ -2,13 +2,14 @@ const {Schema, model} = require("mongoose");
 
 const puzzleSchema = new Schema(
   {
-    name: {type: String, unique: true, required: true, maxLength: 40},
-    comment: {type: String, maxLength: 140},
-    designer: {type: Schema.Types.ObjectId, ref: "User"},
+    title: {type: String, unique: true, required: true, maxLength: 40},
+    description: {type: String, maxLength: 140},
+    author: {type: Schema.Types.ObjectId, ref: "User"},
     nbCols: {type: Number, min: 1, max: 14},
-    map: {type: [Number]},
-    items: {type: [Number]},
-    startIdx: {type: Number},
+    colors: {type: [String]},
+    items: {type: [String]},
+    startRow: {type: Number},
+    startCol: {type: Number},
     startDir: {type: String, enum: ["up", "right", "down", "left"], default: "right"},
     controls: {type: [String]},
     functions: {type: [Number]}
