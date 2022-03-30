@@ -3,13 +3,11 @@ const User = require("../models/User.model");
 
 
 /* GET profile */
-router.get(`/profile`, (req, res, next) => {
-  res.render("users/profile")
+router.get(`/:username/profile`, async(req, res, next) => {
+  const username = req.params.username 
+  const detailUser = await User.findOne({username: username})
+  console.log(detailUser)
+  res.render("users/profile",{detailUser})
 });
-
-// router.get(`/profile/:id`, async (req, res, next) => {
-//     const id = await User.findById(req.params.id)
-//       res.render("user/profile", id);
-//     });
 
 module.exports = router;

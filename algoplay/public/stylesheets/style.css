@@ -9,12 +9,13 @@
 }
 body {
   font-family: 'Archivo', sans-serif;
-  background-color: #363636;
+  background-color: #121124;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;  
   height: 100vh;
+  width: 100vw;
 }
 
 /* Main page*/
@@ -45,7 +46,7 @@ body {
   margin: 0px 15px;
   text-decoration: none;
   font-size: 1rem;
-  transition: 0.5s;
+  transition: 0.2s;
   letter-spacing: 2px;
   text-transform: capitalize;
   overflow: hidden;
@@ -54,7 +55,7 @@ body {
   background-color: #e91e63;
   color: whitesmoke;
   box-shadow: 0 0 60px #e91e63;
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 }
 .main-btn a:before{
   content: "";
@@ -65,8 +66,8 @@ body {
   height: 10px;
   border-top: 2px solid #e91e63;
   border-left: 2px solid #e91e63;
-  transition: 0.5s;
-  transition-delay: 0.5s;
+  transition: 0.2s;
+  transition-delay: 0.2s;
 }
 .main-btn a:hover:before{
   width: 100%;
@@ -135,14 +136,12 @@ body {
 
 .menu img{
   width: 50px;
+  background-color: #ffffff;
 }
 header {
-  position: fixed;
-  right: 30;
-  top: 30;
-  display: flex;
-  width: 100%;
-height: 100%;
+  position: absolute;
+  right: 1px;
+  top: 1px;
 }
 .action{
 position: relative;
@@ -154,19 +153,18 @@ height: 100%;
  cursor: pointer; 
 }
 .action .profile img{
-  /* width: 100%;
-  height: 100%; */
-   width: 60px;
- height: 60px;
+  width: 60px;
+  height: 60px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30px;
+  right: 22px;
   object-fit: cover;
+  position: fixed;
  }
  .action .menu{
    position: absolute;
-   right: -10px;
-   top: 130px;
+   right: 10px;
+   top: 100px;
    padding: 10px 20px;
    background: #7e7e7e6e ;
    width: 200px;
@@ -177,9 +175,9 @@ height: 100%;
    opacity: 0;
  }
  .action .menu.active{
-   top: 70px;
-   visibility: visible;
-   opacity: 1;
+  top: 99px;
+  visibility: visible;
+  opacity: 1;
  }
  .action .menu h3{
   line-height: 1.2rem;
@@ -206,7 +204,7 @@ height: 100%;
 .action .menu ul li a{
   display: inline-block;
   text-decoration: none;
-  color: #000000;
+  color: #f0c61f;
   font-weight: 500;
   transition: 0,5s;
 }
@@ -364,7 +362,7 @@ font-weight: 300;
 
 }
 .main-table{
-  min-height: 100vh;
+  min-height: 80vh;
 }
 .main-table title{
   display: flex;
@@ -377,6 +375,7 @@ font-weight: 300;
 
 /* clement */
 
+/* create puzzle page */
 
 #container {
   display:flex;
@@ -389,35 +388,49 @@ font-weight: 300;
   background-color: #000000;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
-  height: 607px;
-  width: 750px;
-  border: 1px solid rgb(37, 37, 37);
-
+  height: 556px;
+  width: 700px;
+  border: 10px solid crimson;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px crimson;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 #palette {
-  /* height: 40vh;
-  width: 60vw; */
   display:flex;
   flex-direction: row;
   justify-content: center;
 }
 
-input {
-  display: block;
-}
-
 .tile {
-  border: 1px solid rgb(37, 37, 37);
+  border: 1.8px solid rgb(37, 37, 37);
   background-color: black;
-  border-radius: 1px;
 }
-
-
 
 .properties {
-  width: 32vw;
-  
+  width: 400px;
+}
+.properties button{
+  color: #e91e63;
+  padding: 10px 30px;
+  margin: 18px 29px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+}
+
+.properties button:hover{
+  background-color: #e91e63;
+  color: whitesmoke;
+  box-shadow: 0 0 60px #e91e63;
+  transition-delay: 0.2s;
 }
 
 .tools {
@@ -426,32 +439,54 @@ input {
   height: 100px; 
   width: 155px;
 }
-.properties input{
-  color: #000000;
+
+.tools  #box-icon:hover{
+rotate: 360deg;
+transition: 1s;
+transition-delay: 0.5s;
 }
 
-.inactive {
-  background-color: black;
+.tools  #box-color:hover{
+  border-bottom: 5px solid #c21858;
+  transition: 1s;
+  transition-delay: 0.5s;
+  }
+
+.properties input{
+  color: #ffffff;
+font-size: 15px;
+margin-bottom: 3px;
+outline: none;
+border: none;
+border-bottom-color: currentcolor;
+border-bottom-style: none;
+border-bottom-width: medium;
+border-bottom: 1px solid #e91e63;
+background: #363636;
+border-radius: 1px;
+}
+
+#box-color{
+  margin-bottom: 20px;
+}
+#box-icon{
+  margin-left: 7px;
 }
 .color1 {
   background-color:rgb(93, 110, 185);
-  border: 1px solid rgb(93, 110, 185);
-  border-radius: 2px;
+  border: 1.8px solid #000000;
 
 }
 
 .color2 {
   background-color: rgb(49, 190, 131);
-  border: 1px solid rgb(49, 190, 131);
-  border-radius: 2px ;
-
+  border: 1.8px solid #000000;
 }
 
 .color3 {
   background-color: lightpink;
-  border: 1px solid lightpink;
-  border-radius: 2px ;
-
+  border: 1.8px solid #000000;
+  
 }
 
 .star {
