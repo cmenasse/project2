@@ -1,8 +1,11 @@
 let maxHeight = 12;
 let maxWidth = 16;
+let angle = 0;
+let nbStars = 1;
+let isMouseDown;
+let state = "color1";
 
-
-// Functions 
+// Init 
 
 function createTiles() {
   let html = '';
@@ -23,21 +26,11 @@ function displayTiles() {
   star.classList.add("color1", "star");
 }
 
-// function createTiles() {
-//   let html = '';
-//   for (let i = 0; i < 12; i++) {
-//     for (let j = 0; j < 16; j++) {
-//       html += `<div class="tile inactive" data-row="${i}" data-col="${j}"></div>`;
-//     }}
-//   document.querySelector('#grid').innerHTML = html;
-// }
+createTiles();
+displayTiles();
 
-// function displayTiles() {
-//   document.querySelector('[data-row="5"][data-col="7"]').classList.remove("inactive");
-//   document.querySelector('[data-row="5"][data-col="7"]').classList.add("color1", "cursor");
-//   document.querySelector('[data-row="5"][data-col="8"]').classList.remove("inactive");
-//   document.querySelector('[data-row="5"][data-col="8"]').classList.add("color1", "star");
-// }
+
+// Functions
 
 function dropStar(tile) {
   if (tile.classList.contains("star") && nbStars > 1) {
@@ -88,8 +81,7 @@ function colorCase(tile) {
   }
 }
 
-function toggleTile(tile)
-{
+function toggleTile(tile) {
   switch (state) {
     case "star":
       starCase(tile);
@@ -115,41 +107,7 @@ function clickTools(event) {
   else {
     state = event.target.className;
   }
-  encode();
 }
-
-// Init 
-
-let angle = 0;
-let nbStars = 1;
-let isMouseDown;
-let state = "color1";
-createTiles();
-displayTiles();
-
-
-// EventListeners
-
-document.addEventListener('mousedown', function (event) {
-  isMouseDown = true;
-})
-
-document.addEventListener('mouseup', function (event) {
-  isMouseDown = false;
-})
-
-document.addEventListener('mouseover', function (event) {
-  if (isMouseDown && event.target.classList.contains('tile')) {
-    toggleTile(event.target);
-  }
-})
-
-document.querySelector("#grid").addEventListener('click', clickGrid);
-document.querySelector(".tools").addEventListener('click', clickTools);
-document.querySelector("form").addEventListener('submit', handleSubmit);
-
-
-// MongoDB
 
 function encode() {
   let startRow = 0;
@@ -172,21 +130,35 @@ function encode() {
     itemsMap.push(itemsRow);
     colorsMap.push(colorsRow);
   }
-
-  console.log(startRow,startCol,  angle / 90);
-  console.log(colorsMap,itemsMap);
-
-
   return ([colorsMap, itemsMap, startRow, startCol, angle / 90]);
 } 
 
-
-function handleSubmit () {
+function handleSubmit() {
   const [colorsMap, itemsMap, startRow, startCol, startDir] = encode();
   document.getElementById('colors').value = colorsMap;
-
   document.getElementById('items').value = itemsMap;
   document.getElementById('startRow').value = startRow;
   document.getElementById('startCol').value = startCol;
   document.getElementById('startDir').value = startDir;
 }
+
+// EventListeners
+
+document.addEventListener('mousedown', function (event) {
+  isMouseDown = true;
+})
+
+document.addEventListener('mouseup', function (event) {
+  isMouseDown = false;
+})
+
+document.addEventListener('mouseover', function (event) {
+  if (isMouseDown && event.target.classList.contains('tile')) {
+    toggleTile(event.target);
+  }
+})
+
+document.querySelector("#grid").addEventListener('click', clickGrid);
+document.querySelector(".tools").addEventListener('click', clickTools);
+document.querySelector("form").addEventListener('submit', handleSubmit);
+

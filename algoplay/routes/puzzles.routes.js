@@ -10,10 +10,18 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+router.get("/play/:id", async (req, res, next) => {
+  try {
+    const puzzle = await Puzzle.findById(req.params.id);
+    res.render("puzzles/play", {puzzle});
+  } catch {
+    next();
+  }
+});
+
 router.get('/create', (req, res, next) => {
   res.render('puzzles/create');
 })
-
 
 function convertFormToModel(formData) {
   const colors = formData.colors.split(",");
@@ -24,14 +32,12 @@ function convertFormToModel(formData) {
 
 router.post('/create', async (req, res, next) => {
   try {
-    const  converted = convertFormToModel(req.body);
+    const converted = convertFormToModel(req.body);
     console.log(converted);
     await Puzzle.create(converted);
     res.redirect('/puzzles');
   } catch(error) {
-    console.error(error);
-    next(error);
-    // res.redirect('/puzzles/create');
+    res.redirect('/puzzles/create');
   }
 })
 
