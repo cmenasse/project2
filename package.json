@@ -1,0 +1,4 @@
+{"scripts": {
+    "postinstall": "npm-install --prefix ./algoplay",
+    "start": "npm start --prefix ./algoplay"
+}}
