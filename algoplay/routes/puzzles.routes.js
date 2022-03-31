@@ -13,7 +13,11 @@ router.get('/', async (req, res, next) => {
 router.get("/play/:id", async (req, res, next) => {
   try {
     const puzzle = await Puzzle.findById(req.params.id);
-    res.render("puzzles/play", {puzzle});
+    const myfunctions = puzzle.functions.filter(f => f !== null).map((f) => {
+      return Array.from({length: f})
+    })
+    res.render("puzzles/play", {puzzle, myfunctions});
+
   } catch {
     next();
   }

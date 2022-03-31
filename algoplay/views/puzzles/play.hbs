@@ -1,13 +1,30 @@
-Play
 {{#with puzzle}}
     {{title}}
+    <input value="{{colors}}" id="colors" hidden/>
+    <input value="{{items}}" id="items" hidden/>
+    <input value="{{startRow}}" id="startRow" hidden/>
+    <input value="{{startCol}}" id="startCol" hidden/>
+    <input value="{{startDir}}" id="startDir" hidden/>
 {{/with}}
-<a href="/puzzles/">See puzzles</a>
+
 
 <div id="container"> 
 <div id="grid"></div>
 <div id="palette">
-    <div id="instructions"></div>
+    <div id="instructions">
+        {{#each myfunctions}}
+                 <div>
+                     <p>f{{@index}}: </p>
+                    {{#each this}}
+                      <div class="array"> test</div> 
+                    {{/each}}  
+                </div>
+        {{/each}}
+
+
+
+
+    </div>
     <div id="controls"></div>
 </div>
 </div>
