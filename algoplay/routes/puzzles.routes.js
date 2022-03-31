@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const Puzzle = require('../models/Puzzle.model');
 
+
 router.get('/', async (req, res, next) => {
   try {
-      const puzzles = await Puzzle.find();
+      const puzzles = await Puzzle.find().populate('author');
       res.render('puzzles/puzzles', {puzzles});
     } catch (error) {
       console.error(error);
@@ -37,10 +38,12 @@ function convertFormToModel(formData) {
 router.post('/create', async (req, res, next) => {
   try {
     const converted = convertFormToModel(req.body);
-    console.log(converted);
+    console.log("trying to create", converted);
     await Puzzle.create(converted);
+ 
     res.redirect('/puzzles');
   } catch(error) {
+    console.error(error)
     res.redirect('/puzzles/create');
   }
 })

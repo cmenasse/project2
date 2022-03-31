@@ -10,7 +10,9 @@
     </div>
     <div class="buttons">
     <a class="btn-profile" href="/users/{{connectedUser.username}}/profile/edit">Edit Profile</a>
-    <a class="btn-profile" href="/">Delete Account</a>
+    <form action="/users/delete" method="post">
+        <input class="btn-profile" type="submit" value="delete Account">
+    </form>
     </div>
 
 

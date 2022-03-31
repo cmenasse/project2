@@ -579,7 +579,7 @@ border-radius: 1px;
   margin-bottom: 20px;
 }
 
-.box-profile .btn-profile{
+.box-profile .btn-profile {
   color: #e91e63;
   padding: 10px 30px;
   margin: 18px 29px;
@@ -613,6 +613,7 @@ border-radius: 1px;
   background-color: #000000;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
+  margin-left: 140px;
 
 }
 
