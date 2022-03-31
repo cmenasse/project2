@@ -233,7 +233,7 @@ height: 100%;
 .box .input-box{
   position: relative;
 }
-.box .input-box input{
+ .input-box input{
 width: 100%;
 padding: 10px 0;
 color: #ffffff;
@@ -247,14 +247,14 @@ background: #363636;
 border-radius: 5px;
 
 }
-.box .input-box label{
+ .input-box label{
 top: 0;  
 padding: 10px 0;
 font-size: 20px;
 color: #121124;
 transition: 0.5s;
 }
-.box .input-box button{
+ .input-box button{
   position: absolute;
   right: 37%;
   color: #e91e63;
@@ -270,7 +270,7 @@ transition: 0.5s;
   border: none;
   border-radius: 25px;
 }
-.box .input-box button:hover{
+.input-box button:hover{
   background-color: #e91e63;
   color: whitesmoke;
   box-shadow: 0 0 60px #e91e63;
@@ -346,7 +346,7 @@ font-weight: 300;
 .container a{
   position:absolute;
   bottom: 30px;
-  left: 48%;
+  left: 44%;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 1.6rem;
@@ -514,6 +514,7 @@ border-radius: 1px;
 /* profile page */
 
 .box-profile{
+  padding: 30px;
   width: 57vw;
   height: 53vh;
   background-color: #7e7e7e6e;
@@ -561,4 +562,32 @@ border-radius: 1px;
   align-items: center;
 }
 
+.description form{
+  display: flex;
+  flex-direction: column;
+}
+.description form input{
+  width: 300px;
+  min-height: 28px;
+  font-size: 15px;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid black;
+  margin-bottom: 8px;
+
+}
+.description form label{
+  margin-bottom: 8px;
+  font-size: 17px;
+  color: #ffffff;
+}
+.flex-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flex-center h2{
+  padding-top: 41px;
+}
 
