@@ -1,0 +1,19 @@
+{{> miniNav}}
+<div class="box-profile flex-center">
+    <h2>{{connectedUser.username}}</h2>
+    <div class="description">
+        <form action="/users/{{connectedUser.username}}/profile/edit" method="post">
+        <label for="username">User Name:</label>
+        <input type="text" name="username" value="{{connectedUser.username}}">
+        <label for="firstname">First name:</label>
+        <input type="text" name="firstname" value="{{connectedUser.firstname}}">
+         <label for="lastname">Last name:</label>
+        <input type="text" name="lastname" value="{{connectedUser.lastname}}">
+        <label for="age">Age:</label>
+        <input type="number" name="age" value="{{connectedUser.age}}">
+        <input class="btn-profile" type="submit" value="Confirm">
+        </form>
+    
+    </div>
+
+</div>
