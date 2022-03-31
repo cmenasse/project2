@@ -299,7 +299,7 @@ transition: 0.5s;
 }
 .container .template{
   position: relative;
-  width: 75vw;
+  width: 60vw;
   height: 250px;
   background: #121124;
   display: flex;
@@ -310,6 +310,7 @@ transition: 0.5s;
 .content{
   position: relative;
   padding: 20px;
+  margin-right: 10vw;
 }
 .container .template h1{
   position: absolute;
@@ -335,15 +336,17 @@ font-weight: 300;
   color: #c21858;
   }
 .puzzle-picture{
-  max-height: 200px;
+  height: 200px;
+  margin-left: 13vw;
 }
 .puzzle-picture img{
   max-height: 200px;
+  width: 200px;
 }
 .container a{
   position:absolute;
   bottom: 30px;
-  left: 50%;
+  left: 48%;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 1.6rem;
@@ -411,7 +414,7 @@ font-weight: 300;
 .properties {
   width: 400px;
 }
-.properties button{
+.properties .btn{
   color: #e91e63;
   padding: 10px 30px;
   margin: 18px 29px;
@@ -426,7 +429,7 @@ font-weight: 300;
   border-radius: 25px;
 }
 
-.properties button:hover{
+.properties .btn:hover{
   background-color: #e91e63;
   color: whitesmoke;
   box-shadow: 0 0 60px #e91e63;
@@ -507,3 +510,55 @@ border-radius: 1px;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+/* profile page */
+
+.box-profile{
+  width: 57vw;
+  height: 53vh;
+  background-color: #7e7e7e6e;
+  border-radius: 15px ;
+  box-shadow: 0 15px 25px #000000;
+}
+
+.box-profile h1{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-size: 4rem;
+  text-align: center;
+}
+.description{
+  margin: 30px;
+}
+.description h3{
+  margin-bottom: 20px;
+}
+
+.box-profile .btn-profile{
+  color: #e91e63;
+  padding: 10px 30px;
+  margin: 18px 29px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+}
+
+.box-profile .btn-profile:hover{
+  background-color: #e91e63;
+  color: whitesmoke;
+  box-shadow: 0 0 60px #e91e63;
+  transition-delay: 0.2s;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
