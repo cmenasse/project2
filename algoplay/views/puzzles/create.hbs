@@ -1,4 +1,6 @@
+{{#if connectedUser}}
 {{> miniNav}}
+{{/if}}
  <div class="main-table">
 
 <div id="container"> 
@@ -11,6 +13,7 @@
         <input type="number" placeholder="F1 commands" name="cmd1" min="1" max="10" required/>
         <input type="number" placeholder="F2 commands" name="cmd2" min="0" max="10"/>
         <input type="number" placeholder="F3 commands" name="cmd3" min="0" max="10"/>
+                <input type="hidden" id="author" name="author" value="{{connectedUser._id}}"/> 
         <input type="hidden" id="colors" name="colors"/> 
         <input type="hidden" id="items" name="items"/> 
         <input type="hidden" id="startRow" name="startRow"/> 
