@@ -1,3 +1,6 @@
+{{#if connectedUser}}
+{{> miniNav}}
+{{/if}}
 <div class="main-table">
     <title>Puzzles</title>
     <a href="/puzzles/create">Create a puzzle</a>
@@ -7,9 +10,13 @@
     <div class="template">
         <div class="content">
             <h3>Title: <span>{{title}}</span> </h3>
+            <h3>Design: <span>{{author}}</span> </h3>
+        </div>
+        <div class="puzzle-picture">
+            <img src="/images/maze.png" alt="example puzzle">
+        </div>
         <div>
             <a href="/puzzles/play/{{this._id}}">play</a>
-        </div>
         </div>
     </div>
 </div>
