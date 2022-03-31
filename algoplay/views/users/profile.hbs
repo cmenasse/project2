@@ -1,4 +1,17 @@
 {{> miniNav}}
-    <h1>{{detailUser.username}}</h1>
+<div class="box-profile">
+    <h1>{{connectedUser.username}}</h1>
+    <div class="description">
+        <h3>First name: {{connectedUser.firstname}}</h3>
+        <h3>Last name: {{connectedUser.lastname}}</h3>
+        <h3>Age: {{connectedUser.age}}</h3>
+        <h3>Created: {{connectedUser.created}}</h3>
+        <h3>Puzzles Solved: {{connectedUser.solved}}</h3>
+    </div>
+    <div class="buttons">
+    <a class="btn-profile" href="/users/{{connectedUser.username}}/profile/edit">Edit Profile</a>
+    <a class="btn-profile" href="/">Delete Account</a>
+    </div>
 
-    <h1>test</h1>
+
+</div>
