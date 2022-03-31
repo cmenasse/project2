@@ -606,6 +606,21 @@ border-radius: 1px;
   align-items: center;
 }
 
+
+.miniature {
+  width: 200px;
+  height: 200px;
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+
+}
+
+.miniature  > .tile {
+  border-width: 0.1px;
+}
+
+
 .description form{
   display: flex;
   flex-direction: column;
