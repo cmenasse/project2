@@ -13,19 +13,20 @@
 <div id="palette">
     <div id="instructions">
         {{#each myfunctions}}
-                 <div>
+                 <div class="functions">
                      <p>f{{@index}}: </p>
                     {{#each this}}
-                      <div class="array"> test</div> 
+                      <div class="array"></div> 
                     {{/each}}  
                 </div>
         {{/each}}
 
-
-
-
     </div>
-    <div id="controls"></div>
+    <div id="controls">
+        <div id="play"></div>
+        <div id="next"></div>
+        <div id="stop"></div>
+    </div>
 </div>
 </div>
 

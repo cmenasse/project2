@@ -507,3 +507,48 @@ border-radius: 1px;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+
+.functions {
+  display: flex;
+  align-items: center;
+}
+
+.array {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #49d437;
+  margin: 2px;
+
+}
+
+#controls {
+  margin-left: 100px;
+}
+
+#play {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/play.png);
+  background-color:rgb(93, 110, 185);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#next {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/next.png);
+  background-color:rgb(93, 110, 185);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#stop {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/stop.png);
+  background-color:rgb(93, 110, 185);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
