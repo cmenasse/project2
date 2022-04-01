@@ -128,6 +128,8 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           });
         }
         req.session.user = user;
+        console.log("authRoutUser", user.createdAt, typeof user.createdAt)
+
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
         
         return res.redirect(`/users/${username}/profile`);

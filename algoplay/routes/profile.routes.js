@@ -38,9 +38,13 @@ router.post(`/:username/profile/edit`, isLoggedIn ,ifCurrentUser ,async(req, res
   }
 });
 
-router.post('/:id/delete', async (req, res, next) => {
+router.post('/delete', isLoggedIn, async  (req, res, next) => {
+  
   try {
-    await User.findByIdAndDelete(req.params.id)
+    console.log("await")
+    await User.findByIdAndDelete(req.session.user._id)
+    req.session.destroy()
+    console.log('hollaaa')
     res.redirect("/")
   } catch (error) {
     next(error)

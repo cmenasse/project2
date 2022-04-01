@@ -13,6 +13,11 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 hbs.registerPartials(__dirname + "/views/partials")
+hbs.registerHelper('formatDate', (date) => {
+    const formatter = new Intl.DateTimeFormat('fr-FR') 
+    console.log(date)
+    return formatter.format(date)
+})
 
 const app = express();
 

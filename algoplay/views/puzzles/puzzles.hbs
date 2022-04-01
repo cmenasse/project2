@@ -3,14 +3,12 @@
 {{/if}}
 <div class="main-table">
     <title>Puzzles</title>
-    <a href="/puzzles/create">Create a puzzle</a>
-
 {{#each puzzles}}
 <div class="container">
     <div class="template">
         <div class="content">
             <h3>Title: <span>{{title}}</span> </h3>
-            <h3>Design: <span>{{author}}</span> </h3>
+            <h3>Author: <span>{{author.username}}</span> </h3>
         </div>
         <div class="miniature">
         <input type="hidden" id="colors" name="colors" value={{colors}}> 
