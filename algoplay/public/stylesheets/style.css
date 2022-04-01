@@ -162,7 +162,7 @@ height: 100%;
   position: fixed;
  }
  .action .menu{
-   position: absolute;
+   position: fixed;
    right: 10px;
    top: 100px;
    padding: 10px 20px;
@@ -632,8 +632,9 @@ border-radius: 1px;
   font-size: 15px;
   color: #ffffff;
   background: transparent;
-  border: 2px solid black;
+  border: 1px solid black;
   margin-bottom: 8px;
+  border-radius: 10px;
 
 }
 .description form label{
