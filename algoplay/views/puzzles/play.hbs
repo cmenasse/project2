@@ -1,5 +1,8 @@
+{{#if connectedUser}}
+{{> miniNav}}
+{{/if}}
 {{#with puzzle}}
-    {{title}}
+    <h1>{{title}}</h1>
     <input value="{{colors}}" id="colors" hidden/>
     <input value="{{items}}" id="items" hidden/>
     <input value="{{startRow}}" id="startRow" hidden/>

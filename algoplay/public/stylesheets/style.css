@@ -518,42 +518,45 @@ border-radius: 1px;
 }
 
 .array {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #49d437;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ffffff;
   margin: 2px;
 
 }
 
 #controls {
   margin-left: 100px;
+  display: flex;
 }
 
 #play {
-  width: 30px;
-  height: 30px;
-  background-image: url(../images/play.png);
-  background-color:rgb(93, 110, 185);
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/play-button.png);
   background-size: contain;
   background-repeat: no-repeat;
+  margin-right: 17px;
+  cursor: pointer;
 }
 
 #next {
-  width: 30px;
-  height: 30px;
-  background-image: url(../images/next.png);
-  background-color:rgb(93, 110, 185);
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/next-button.png);
   background-size: contain;
   background-repeat: no-repeat;
+  margin-right: 17px;
+  cursor: pointer;
 }
 
 #stop {
-  width: 30px;
-  height: 30px;
-  background-image: url(../images/stop.png);
-  background-color:rgb(93, 110, 185);
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/stop-button.png);
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 /* profile page */
 
